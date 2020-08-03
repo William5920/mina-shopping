@@ -10,3 +10,7 @@ page {
   --themeColor: #d81e06;
   font-size: 28rpx;
 }
+
+image {
+  width: 100%;
+}

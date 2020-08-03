@@ -1,2 +1,44 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="cates">
+    <SearchInput></SearchInput>
+    <view class="cates_container">
+        <!-- 左侧菜单 -->
+        <scroll-view class="left_menu" scroll-y>
+            <view 
+            class="menu_item {{index===currentIndex?'active':''}}"
+            wx:for="{{leftMenuList}}"
+            wx:key="*this"
+            bindtap="handleItemTap"
+            data-index="{{index}}">
+                {{item}}
+            </view>
+        </scroll-view>
+        <!-- 右侧商品内容 -->
+        <scroll-view 
+        class="right_content" 
+        scroll-y
+        scroll-top="{{scrollTop}}">
+            <view class="goods_group"
+            wx:for="{{rightContent}}"
+            wx:for-item="group_item"
+            wx:for-index="group_index"
+            wx:key="group_idnex">
+                <view class="goods_title">
+                    <text class="delimiter">/</text>
+                    <text class="title">{{group_item.cat_name}}</text>
+                    <text class="delimiter">/</text>
+                </view>
+                <view class="goods_list">
+                    <navigator
+                    wx:for="{{group_item.children}}"
+                    wx:for-item="brand"
+                    wx:fro-index="brand_index"
+                    wx:key="cat_id"
+                    url="/pages/goods_list/index?cid={{brand.cat_id}}">
+                        <image src="{{brand.cat_icon}}" mode="widthFix"></image>
+                        <view class="goods_name">{{brand.cat_name}}</view>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
