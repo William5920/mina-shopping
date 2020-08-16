@@ -58,6 +58,7 @@ Page({
     // 4.存在，则将该商品的num加1
     if(index === -1) {
       this.GoodsInfo.num = 1
+      this.GoodsInfo.checked = true
       cart.push(this.GoodsInfo)
     } else {
       cart[index].num++
