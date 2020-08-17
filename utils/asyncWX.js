@@ -76,3 +76,29 @@ export const showToast = ({title}) => {
         })
     })
 }
+
+// wx.login
+export const login = () => {
+    return new Promise((resolve, reject) => {
+        wx.login({
+            timeout:10000,
+            success: (result)=>{
+                resolve(result)
+            },
+            fail: (err)=>{
+                reject(err)
+            },
+        })
+    })
+}
+
+// wx.requestPayment
+export const requestPayment = (pay) => {
+    return new Promise((resolve, reject) => {
+        wx.requestPayment({
+            ...pay,
+            success (res) { resolve(res) },
+            fail (err) { reject(err) }
+        })
+    })
+}
