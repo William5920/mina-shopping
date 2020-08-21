@@ -36,15 +36,15 @@
         <view class="orders-wrap">
             <view class="orders-title">我的订单</view>
             <view class="orders-content">
-                <navigator>
+                <navigator url="/pages/order/index?type=1">
                     <view class="iconfont icon-ding_dan"></view>
                     <view class="order-name">全部订单</view>
                 </navigator>
-                <navigator>
+                <navigator url="/pages/order/index?type=2">
                     <view class="iconfont icon-fukuantongzhi"></view>
                     <view class="order-name">待付款</view>
                 </navigator>
-                <navigator>
+                <navigator url="/pages/order/index?type=3">
                     <view class="iconfont icon-receipt-address"></view>
                     <view class="order-name">待收货</view>
                 </navigator>

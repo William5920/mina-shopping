@@ -118,6 +118,14 @@
 					"id": -1,
 					"name": "我的",
 					"pathName": "pages/user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单查询",
+					"pathName": "pages/order/index",
+					"query": "type=1",
 					"scene": null
 				}
 			]
