@@ -1,0 +1,122 @@
+/* pages/user/index.wxss */
+page {
+    background-color: #edece8;
+}
+.user-info-wrap {
+    height: 45vh;
+    background-color: var(--themeColor);
+    overflow: hidden;
+    position: relative;
+    .user-img-wrap {
+        position: relative;
+        text-align: center;
+        height: 45vh;
+        .user-bg {
+            width: 110%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            top: -5%;
+            filter: blur(10rpx);
+        }
+  
+        .user-info {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            top: 20%;
+            text-align: center;
+            .user-icon {
+                width: 150rpx;
+                border-radius: 50%;
+            }
+    
+            .user-name {
+                color: #ffffff;
+                margin-top: 12rpx;
+            }
+        }
+    }
+    .login-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        color: #ffffff;
+        font-size: 32rpx;
+        font-weight: 700;
+        border: 4rpx solid #ffffff;
+        border-radius: 10rpx;
+        padding: 20rpx 60rpx;
+    }
+}
+.user-content {
+    position: relative;
+    .user-main {
+        color: #666;
+        padding-bottom: 100rpx;
+        position: absolute;
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%);
+        top: -40rpx;
+        .history-wrap {
+            display: flex;
+            text-align: center;
+            background-color: #fff;
+            navigator {
+                flex: 1;
+                padding: 10rpx 0;
+                .his-num {
+                    color: var(--themeColor);
+                }
+            }
+        }
+        .orders-wrap {
+            background-color: #fff;
+            margin-top: 30rpx;
+            .orders-title {
+                padding: 20rpx;
+                border-bottom: 1px solid #ccc;
+            }
+            .orders-content {
+                display: flex;
+                text-align: center;
+                navigator {
+                    flex: 1;
+                    padding: 15rpx 0;
+                    .iconfont {
+                        color: var(--themeColor);
+                        font-size: 40rpx;
+                    }
+                }
+            }
+        }
+        .address-wrap {
+            margin-top: 30rpx;
+            padding: 20rpx;
+            background-color: #fff;
+        }
+        .app-info-wrap {
+            margin-top: 30rpx;
+            
+            background-color: #fff;
+            .app-info-item {
+                padding: 20rpx;
+                border-bottom: 1rpx solid #ccc;
+                &:last-child {
+                    border: none;
+                }
+            }
+            .app-info-contact {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .recommend-wrap {
+            margin-top: 30rpx;
+            padding: 20rpx;
+            background-color: #fff;
+        }
+    }
+}

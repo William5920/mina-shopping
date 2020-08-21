@@ -1,1 +1,119 @@
 /* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user-info-wrap {
+  height: 45vh;
+  background-color: var(--themeColor);
+  overflow: hidden;
+  position: relative;
+}
+.user-info-wrap .user-img-wrap {
+  position: relative;
+  text-align: center;
+  height: 45vh;
+}
+.user-info-wrap .user-img-wrap .user-bg {
+  width: 110%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -5%;
+  filter: blur(10rpx);
+}
+.user-info-wrap .user-img-wrap .user-info {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 20%;
+  text-align: center;
+}
+.user-info-wrap .user-img-wrap .user-info .user-icon {
+  width: 150rpx;
+  border-radius: 50%;
+}
+.user-info-wrap .user-img-wrap .user-info .user-name {
+  color: #ffffff;
+  margin-top: 12rpx;
+}
+.user-info-wrap .login-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: 700;
+  border: 4rpx solid #ffffff;
+  border-radius: 10rpx;
+  padding: 20rpx 60rpx;
+}
+.user-content {
+  position: relative;
+}
+.user-content .user-main {
+  color: #666;
+  padding-bottom: 100rpx;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%);
+  top: -40rpx;
+}
+.user-content .user-main .history-wrap {
+  display: flex;
+  text-align: center;
+  background-color: #fff;
+}
+.user-content .user-main .history-wrap navigator {
+  flex: 1;
+  padding: 10rpx 0;
+}
+.user-content .user-main .history-wrap navigator .his-num {
+  color: var(--themeColor);
+}
+.user-content .user-main .orders-wrap {
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.user-content .user-main .orders-wrap .orders-title {
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.user-content .user-main .orders-wrap .orders-content {
+  display: flex;
+  text-align: center;
+}
+.user-content .user-main .orders-wrap .orders-content navigator {
+  flex: 1;
+  padding: 15rpx 0;
+}
+.user-content .user-main .orders-wrap .orders-content navigator .iconfont {
+  color: var(--themeColor);
+  font-size: 40rpx;
+}
+.user-content .user-main .address-wrap {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.user-content .user-main .app-info-wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.user-content .user-main .app-info-wrap .app-info-item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user-content .user-main .app-info-wrap .app-info-item:last-child {
+  border: none;
+}
+.user-content .user-main .app-info-wrap .app-info-contact {
+  display: flex;
+  justify-content: space-between;
+}
+.user-content .user-main .recommend-wrap {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
