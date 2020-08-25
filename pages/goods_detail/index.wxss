@@ -37,6 +37,9 @@ page {
   justify-content: center;
   align-items: center;
 }
+.goods_name_row .goods_collect .icon-shoucang {
+  color: orange;
+}
 .goods_info .goods_info_title {
   padding: 20rpx;
   color: var(--themeColor);

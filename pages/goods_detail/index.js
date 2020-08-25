@@ -12,7 +12,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function () {
+    let pages = getCurrentPages()
+    let currentPage = pages[pages.length-1]
+    let options = currentPage.options
     const {goods_id} = options
     this.getGoodsDetail(goods_id)
   },
@@ -26,6 +29,10 @@ Page({
     })
     // console.log(res)
     this.GoodsInfo = res.data.message
+    // 检测商品是否被收藏
+    const collect = wx.getStorageSync('collect') || []
+    let isCollected = collect.some(v => v.goods_id===this.GoodsInfo.goods_id)
+
     this.setData({
       goodsObj: {
         goods_price: res.data.message.goods_price,
@@ -35,7 +42,8 @@ Page({
         // 前端的临时解决办法：在确保后台存在.jpg格式图片的情况下，将字符串中的.webp替换为.jpg
         goods_introduce: res.data.message.goods_introduce.replace(/\.webp/g, '.jpg'),
         pics: res.data.message.pics
-      }
+      },
+      isCollected
     })
   },
   // 点击放大预览图片
@@ -70,6 +78,35 @@ Page({
       title: '添加成功',
       icon: 'success',
       mask: true,
+    })
+  },
+  // 点击收藏商品
+  handleCollect() {
+    let isCollected = false
+    let collect = wx.getStorageSync('collect') || []
+    let index = collect.findIndex(v => v.goods_id===this.GoodsInfo.goods_id)
+    if(index!==-1) {
+      // 商品已被收藏
+      collect.splice(index, 1)
+      isCollected = false
+      wx.showToast({
+        title: '取消成功',
+        icon: 'success',
+        mask: true,
+      })
+    } else {
+      // 商品没被收藏
+      collect.push(this.GoodsInfo)
+      isCollected = true
+      wx.showToast({
+        title: '收藏成功',
+        icon: 'success',
+        mask: true,
+      })
+    }
+    wx.setStorageSync('collect', collect)
+    this.setData({
+      isCollected
     })
   }
   

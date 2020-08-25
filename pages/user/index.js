@@ -5,10 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+    userInfo: {},
+    collectNum: 0
   },
   onShow() {
     let userInfo = wx.getStorageSync('userInfo')
-    this.setData({userInfo})
+    let collect = wx.getStorageSync('collect') || []
+    this.setData({userInfo, collectNum: collect.length})
   }
 })
