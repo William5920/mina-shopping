@@ -1,0 +1,6 @@
+<view class="up-img-wrap">
+   <image src="{{src}}"></image>
+    <icon class="" type="clear" size="20" color="red" bindtap="handleTap" data-index="{{index}}">
+        
+    </icon>
+</view>
